@@ -1,7 +1,7 @@
 /* Variáveis para facilidade de temas (Limpo e Tons Pastéis) */
 
 :root {
-    --gradiente-fundo:linear-gradient(135deg,#a8edea 0%,#fed6e3 100);
+    --gradiente-fundo:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);
     --imagem-fundo: url("dia.png");
     --fundo-cartao: #ffffff;
     --cor-texto: #2d3748;
@@ -10,6 +10,9 @@
     --cor-borda: #edf2f7;
     --cor-perigo: #ff7675;
     --cor-concluido: #a0aec0;
+    --cor-alta: #e53e3e;
+    --cor-media: #d69e2e;
+    --cor-baixa: #38a169;
 }
 
 body.modo-escuro {
@@ -86,6 +89,74 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+}
+
+.opcoes-tarefa {
+    display: flex;
+    gap: 10px;
+}
+
+.opcoes-tarefa select {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    outline: none;
+    background: var(--fundo-cartao);
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+
+.opcoes-tarefa select:focus {
+    border-color: var(--cor-primaria);
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.filtro {
+    border: none;
+    background: transparent;
+    color: var(--cor-texto);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.filtro:hover {
+    background: var(--cor-borda);
+}
+
+.filtro.ativo {
+    background: var(--cor-primaria);
+    color: white;
+}
+
+.prioridade {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.prioridade.alta {
+    color: var(--cor-alta);
+}
+
+.prioridade.media {
+    color: var(--cor-media);
+}
+
+.prioridade.baixa {
+    color: var(--cor-baixa);
+}
+
+.botao-acao.editar:hover {
+    color: var(--cor-primaria);
 }
 
 input[type="text"],
